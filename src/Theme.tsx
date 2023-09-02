@@ -20,5 +20,14 @@ export const theme = createTheme({
   },
   shape:{
     borderRadius: 24
-  }
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 450,
+      md: 700,
+      lg: 1200,
+      xl: 1534
+    },
+  },
 });
