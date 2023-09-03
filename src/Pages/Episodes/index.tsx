@@ -3,8 +3,10 @@ import EpisodesBG from "../../assets/img/episode.png";
 import { Typography } from "@mui/material";
 import GlassyWrapper from "../../components/GlassyWrapper";
 import Search from "../../components/Search";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Episodes = () => {
+  useScrollToTop()
   return (
     <Layout bgImg={EpisodesBG}>
       <GlassyWrapper maxWidth={410}>

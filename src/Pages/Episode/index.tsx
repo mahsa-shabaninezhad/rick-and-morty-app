@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { ROUTES } from "../../Routes";
 import { TypedDocumentNode, gql, useSuspenseQuery } from "@apollo/client";
 import { EpisodeQueryType, IdVariableType } from "../../Types";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const GET_EPISODE: TypedDocumentNode<EpisodeQueryType, IdVariableType> = gql`
   query getEpisode($id: ID!) {
@@ -22,6 +23,7 @@ const GET_EPISODE: TypedDocumentNode<EpisodeQueryType, IdVariableType> = gql`
 `;
 
 const Episode = () => {
+  useScrollToTop()
   const { episodeId } = useParams();
   const { data } = useSuspenseQuery(GET_EPISODE, {
     variables: { id: episodeId! },

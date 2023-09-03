@@ -5,6 +5,7 @@ import { TypedDocumentNode, gql, useSuspenseQuery } from "@apollo/client";
 import Button from "../../components/Button";
 import { useTransition } from "react";
 import { CharactersQueryType } from "../../Types";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const GET_CHARACTERS: TypedDocumentNode<CharactersQueryType> = gql`
   query getCharacters($page: Int!) {
@@ -23,6 +24,7 @@ const GET_CHARACTERS: TypedDocumentNode<CharactersQueryType> = gql`
 `;
 
 const Characters = () => {
+  useScrollToTop()
   const [isPending, startTransition] = useTransition();
 
   const { data, fetchMore } = useSuspenseQuery(GET_CHARACTERS, {

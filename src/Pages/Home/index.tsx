@@ -3,8 +3,10 @@ import HomeBG from "../../assets/img/home.jpg";
 import Layout from "../../components/Layout";
 import Search from "../../components/Search";
 import GlassyWrapper from "../../components/GlassyWrapper";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Home = () => {
+  useScrollToTop()
   return (
     <Layout bgImg={HomeBG}>
       <GlassyWrapper maxWidth={410}>

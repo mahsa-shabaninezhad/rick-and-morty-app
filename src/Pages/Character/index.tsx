@@ -6,6 +6,7 @@ import Favorite from "../../components/Favorite";
 import { TypedDocumentNode, gql, useSuspenseQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { CharacterQueryType } from "../../Types";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const GET_CHARACTER: TypedDocumentNode<CharacterQueryType> = gql`
   query getCharacter($id: ID!) {
@@ -33,6 +34,7 @@ const GET_CHARACTER: TypedDocumentNode<CharacterQueryType> = gql`
 `;
 
 const Character = () => {
+  useScrollToTop()
   const { characterId } = useParams();
   const { data } = useSuspenseQuery(GET_CHARACTER, {
     variables: { id: characterId },
