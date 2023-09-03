@@ -4,6 +4,7 @@ export const ROUTES_SCHEMA = {
   EPISODE: "/episodes/:episodeId",
   CHARACTERS: "/characters",
   CHARACTER: "/characters/:characterId",
+  GAME: "/game",
 };
 
 export const ROUTES = {
@@ -12,4 +13,5 @@ export const ROUTES = {
   EPISODE: (epId: string) => `/episodes/${epId}`,
   CHARACTERS: "/characters",
   CHARACTER: (charId: string) => `/characters/${charId}`,
+  GAME: "/game",
 };
