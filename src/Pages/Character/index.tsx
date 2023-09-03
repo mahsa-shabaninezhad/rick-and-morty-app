@@ -102,7 +102,7 @@ function CharacterName({ name }: { name: string }) {
       <Typography variant="h2" component="h1">
         {name}
       </Typography>
-      <Favorite type="character" />
+      <Favorite />
     </Box>
   );
 }

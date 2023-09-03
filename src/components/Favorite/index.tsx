@@ -4,7 +4,7 @@ import { useState } from "react";
 import { theme } from "../../Theme";
 import { Box } from "@mui/material";
 
-function Favorite({ type }: { type: 'character' | 'episode' }) {
+function Favorite() {
   const [isFavorite, setIsFavorite] = useState(false);
   function handleFavoriteChange() {
     setIsFavorite((prevState) => !prevState);
