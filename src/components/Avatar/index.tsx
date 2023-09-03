@@ -64,6 +64,7 @@ const Figure = styled(Typography)<FigureProps>(
     borderRadius: round ? "50%" : "unset",
     overflow: "hidden",
     flexShrink: 0,
+    backgroundColor: "#48484896",
   })
 );
 
