@@ -3,14 +3,10 @@ import { Box, Typography } from "@mui/material";
 import Avatar from "../../components/Avatar";
 import { Link, useParams } from "react-router-dom";
 import { ROUTES } from "../../Routes";
-import {
-  TypedDocumentNode,
-  gql,
-  useQuery,
-  useSuspenseQuery,
-} from "@apollo/client";
+import { TypedDocumentNode, gql, useSuspenseQuery } from "@apollo/client";
+import { EpisodeQueryType, IdVariableType } from "../../Types";
 
-const GET_EPISODE: TypedDocumentNode<EpisodeQuery, EpisodeVariable> = gql`
+const GET_EPISODE: TypedDocumentNode<EpisodeQueryType, IdVariableType> = gql`
   query getEpisode($id: ID!) {
     episode(id: $id) {
       id
@@ -24,23 +20,6 @@ const GET_EPISODE: TypedDocumentNode<EpisodeQuery, EpisodeVariable> = gql`
     }
   }
 `;
-
-type EpisodeQuery = {
-  episode: {
-    id: string;
-    name: string;
-    air_date: string;
-    episode: string;
-    characters: {
-      id: string;
-      image: string;
-    }[];
-  };
-};
-
-type EpisodeVariable = {
-  id: string;
-};
 
 const Episode = () => {
   const { episodeId } = useParams();
@@ -57,12 +36,7 @@ const Episode = () => {
       <Typography sx={{ mt: 1, mb: 4 }} variant="h2">
         {data.episode.name}
       </Typography>
-      <Typography
-        sx={{
-          mb: 5,
-        }}
-        variant="h5"
-      >
+      <Typography sx={{ mb: 5 }} variant="h5">
         chracters:
       </Typography>
       <Box
