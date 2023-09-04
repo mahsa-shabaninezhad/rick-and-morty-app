@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import { CharacterQueryType } from "../../Types";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
-const GET_CHARACTER: TypedDocumentNode<CharacterQueryType> = gql`
+export const GET_CHARACTER: TypedDocumentNode<CharacterQueryType> = gql`
   query getCharacter($id: ID!) {
     character(id: $id) {
       id
@@ -34,7 +34,7 @@ const GET_CHARACTER: TypedDocumentNode<CharacterQueryType> = gql`
 `;
 
 const Character = () => {
-  useScrollToTop()
+  useScrollToTop();
   const { characterId } = useParams();
   const { data } = useSuspenseQuery(GET_CHARACTER, {
     variables: { id: characterId },
@@ -117,7 +117,7 @@ function CharactereSpecies({
   type: string;
 }) {
   return (
-    <Box sx={{ mt: "auto", display: "flex", gap: 1 }}>
+    <Box data-testid="species-box" sx={{ mt: "auto", display: "flex", gap: 1 }}>
       <Typography>{species}</Typography>
       <Typography>{type && "- " + type}</Typography>
     </Box>

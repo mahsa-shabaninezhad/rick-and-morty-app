@@ -6,6 +6,7 @@ const EpisodeLoading = () => {
   return (
     <Layout>
       <Box
+        data-testid="episode-page-loading"
         sx={{
           display: "flex",
           gap: 1,

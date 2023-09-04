@@ -7,7 +7,7 @@ import { useTransition } from "react";
 import { CharactersQueryType } from "../../Types";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
-const GET_CHARACTERS: TypedDocumentNode<CharactersQueryType> = gql`
+export const GET_CHARACTERS: TypedDocumentNode<CharactersQueryType> = gql`
   query getCharacters($page: Int!) {
     characters(page: $page) {
       info {
@@ -24,7 +24,7 @@ const GET_CHARACTERS: TypedDocumentNode<CharactersQueryType> = gql`
 `;
 
 const Characters = () => {
-  useScrollToTop()
+  useScrollToTop();
   const [isPending, startTransition] = useTransition();
 
   const { data, fetchMore } = useSuspenseQuery(GET_CHARACTERS, {

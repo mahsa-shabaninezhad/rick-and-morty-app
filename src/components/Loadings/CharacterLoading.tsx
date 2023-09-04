@@ -5,6 +5,7 @@ const CharacterLoading = () => {
   return (
     <Layout>
       <Box
+        data-testid="character-page-loading"
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },

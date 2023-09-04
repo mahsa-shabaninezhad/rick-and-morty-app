@@ -7,7 +7,7 @@ import { throttle } from "../../utils";
 import { useRef } from "react";
 import { FilterQuery, SearchValue } from "../../Types";
 
-const FILTER_CHARACTER = gql`
+export const FILTER_CHARACTER = gql`
   query filterCharacter($name: String!) {
     characters(filter: { name: $name }) {
       results {
@@ -18,7 +18,7 @@ const FILTER_CHARACTER = gql`
   }
 `;
 
-const FILTER_EPISODES = gql`
+export const FILTER_EPISODES = gql`
   query filterEpisodes($name: String!) {
     episodes(filter: { name: $name }) {
       results {

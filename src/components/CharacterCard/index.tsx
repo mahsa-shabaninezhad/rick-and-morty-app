@@ -8,7 +8,7 @@ import { CharacterQueryType, CharacterStatusType } from "../../Types";
 import ErrorBoundary from "../ErrorBoundary";
 import pickleRick from "../../assets/img/pickle-rick.png";
 
-const GET_CHARACTER_LOCATION: TypedDocumentNode<CharacterQueryType> = gql`
+export const GET_CHARACTER_LOCATION: TypedDocumentNode<CharacterQueryType> = gql`
   query getCharacter($id: ID!) {
     character(id: $id) {
       id
@@ -94,7 +94,7 @@ function CardBody({ id, status }: { id: string; status: string }) {
 function CardBodyLoading() {
   return (
     <CardBodyWrapper>
-      <Box sx={{ display: "flex", gap: 0.5 }}>
+      <Box data-testid="card-body-loading" sx={{ display: "flex", gap: 0.5 }}>
         <Skeleton variant="text" sx={{ fontSize: "1rem", width: 0.3 }} />
         <Skeleton variant="text" sx={{ fontSize: "1rem", width: 0.5 }} />
       </Box>

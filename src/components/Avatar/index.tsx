@@ -31,9 +31,13 @@ const Avatar = ({
       zoom={zoomOnHover}
       component="figure"
     >
-      <Image src={imgSrc} status={status} />
+      <Image alt="char-pic" src={imgSrc} status={status} />
       {caption && (
-        <Caption textAlign={round ? "center" : "left"} component="figcaption">
+        <Caption
+          data-testid="caption"
+          textAlign={round ? "center" : "left"}
+          component="figcaption"
+        >
           {caption}
         </Caption>
       )}

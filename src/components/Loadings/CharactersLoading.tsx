@@ -6,6 +6,7 @@ function CharactersLoading() {
   return (
     <Layout>
       <Box
+        data-testid="characters-page-loading"
         sx={{
           display: "grid",
           gridTemplateColumns: {
@@ -26,4 +27,4 @@ function CharactersLoading() {
   );
 }
 
-export default CharactersLoading
+export default CharactersLoading;
