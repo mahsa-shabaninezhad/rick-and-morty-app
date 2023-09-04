@@ -1,27 +1,19 @@
-# React + TypeScript + Vite
+# Rick and morty app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+In this app you can search through character and episodes of rick and morty sitcom.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- In the home you can find your favorite character.
+- In the Episode page you can find your favorite episode.
+- In the Characters page, you can explore a comprehensive list of all the characters, along with a brief description about each character. By clicking on the "Episode" button on each card, you will be redirected to the Character page, where you can discover a list of all the episodes that feature that particular character.
+- By clicking on an episode in the Character page, you will be redirected to the Episode page and can discover all the characters featured in that particular episode.
 
-## Expanding the ESLint configuration
+### Technologies and Libraries
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Vite: for its better developing experience, performance and optiomized build.
+- Material-UI (Mui)
+- Apollo: for its declarative data fetching and cache feature
+- React Testing Library
+- emotion/jest: to check styles of elements
+- svgr: to load svgs as a react component.
